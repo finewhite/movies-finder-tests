@@ -27,6 +27,7 @@ class ActorsPage {
         await browser.get('/actor/35742')
     }
 }
+//Все пейдж обжекты должны быть в отдельных файлах
 
 describe('Main page', async function () {
     let homePage = new HomePage()
@@ -34,7 +35,7 @@ describe('Main page', async function () {
         await homePage.open()
     })
     it('Should have "Search"', async function () {
-        let searchField = element(By.name('searchStr'))
+        let searchField = element(By.name('searchStr')) //Если ты переписал на ПО, почему в каждом тесте заново объявляешь элементы, а не используешь объявленные в ПО?
         let searchTitel = element(By.cssContainingText('p', 'Search for a movie using the form below'))
         let searchButton = element(By.cssContainingText('button', 'Go!'))
         await browser.wait(EC.visibilityOf(searchField))
